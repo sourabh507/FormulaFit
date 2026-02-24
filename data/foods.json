@@ -1,0 +1,234 @@
+{
+    "foods": [
+        {
+            "name": "Chicken Breast",
+            "category": "non-vegetarian",
+            "proteinPer100g": 31,
+            "carbsPer100g": 0,
+            "fatPer100g": 3.6,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 165,
+            "servingNote": "1 medium breast = ~150g"
+        },
+        {
+            "name": "Paneer (Indian Cottage Cheese)",
+            "category": "vegetarian",
+            "proteinPer100g": 18,
+            "carbsPer100g": 2.5,
+            "fatPer100g": 20,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 265,
+            "servingNote": "100g serving"
+        },
+        {
+            "name": "Whole Wheat Roti (Chappati)",
+            "category": "vegan",
+            "proteinPer100g": 10,
+            "carbsPer100g": 52,
+            "fatPer100g": 3,
+            "fiberPer100g": 8,
+            "caloriesPer100g": 275,
+            "servingNote": "1 medium roti = ~35g (95 kcal)"
+        },
+        {
+            "name": "Cooked Dal (Lentils)",
+            "category": "vegan",
+            "proteinPer100g": 6,
+            "carbsPer100g": 18,
+            "fatPer100g": 2,
+            "fiberPer100g": 5,
+            "caloriesPer100g": 116,
+            "servingNote": "1 katori/cup = ~150g"
+        },
+        {
+            "name": "Cooked White Rice",
+            "category": "vegan",
+            "proteinPer100g": 2.5,
+            "carbsPer100g": 28,
+            "fatPer100g": 0.3,
+            "fiberPer100g": 0.5,
+            "caloriesPer100g": 130,
+            "servingNote": "1 katori/cup = ~150g"
+        },
+        {
+            "name": "Brown Rice (Cooked)",
+            "category": "vegan",
+            "proteinPer100g": 2.6,
+            "carbsPer100g": 23,
+            "fatPer100g": 0.9,
+            "fiberPer100g": 1.8,
+            "caloriesPer100g": 112,
+            "servingNote": "1 katori/cup = ~150g"
+        },
+        {
+            "name": "Idli",
+            "category": "vegan",
+            "proteinPer100g": 4,
+            "carbsPer100g": 20,
+            "fatPer100g": 0.5,
+            "fiberPer100g": 1.5,
+            "caloriesPer100g": 100,
+            "servingNote": "1 medium idli = ~40g (40 kcal)"
+        },
+        {
+            "name": "Dosa (Plain)",
+            "category": "vegan",
+            "proteinPer100g": 4,
+            "carbsPer100g": 25,
+            "fatPer100g": 4,
+            "fiberPer100g": 1.5,
+            "caloriesPer100g": 150,
+            "servingNote": "1 medium dosa = ~70g (105 kcal)"
+        },
+        {
+            "name": "Boiled Egg",
+            "category": "non-vegetarian",
+            "proteinPer100g": 13,
+            "carbsPer100g": 1,
+            "fatPer100g": 11,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 155,
+            "servingNote": "1 large egg = ~50g (78 kcal)"
+        },
+        {
+            "name": "Egg Bhurji (Scrambled)",
+            "category": "non-vegetarian",
+            "proteinPer100g": 11,
+            "carbsPer100g": 3,
+            "fatPer100g": 10,
+            "fiberPer100g": 0.5,
+            "caloriesPer100g": 150,
+            "servingNote": "1 serving = 2 eggs"
+        },
+        {
+            "name": "Greek Yogurt (Indian Curd)",
+            "category": "vegetarian",
+            "proteinPer100g": 10,
+            "carbsPer100g": 3.6,
+            "fatPer100g": 0.4,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 59,
+            "servingNote": "Plain hung curd"
+        },
+        {
+            "name": "Cooked Chole (Chickpeas)",
+            "category": "vegan",
+            "proteinPer100g": 8,
+            "carbsPer100g": 25,
+            "fatPer100g": 5,
+            "fiberPer100g": 7,
+            "caloriesPer100g": 164,
+            "servingNote": "1 katori = ~150g"
+        },
+        {
+            "name": "Cooked Rajma (Kidney Beans)",
+            "category": "vegan",
+            "proteinPer100g": 8,
+            "carbsPer100g": 22,
+            "fatPer100g": 1,
+            "fiberPer100g": 6,
+            "caloriesPer100g": 127,
+            "servingNote": "1 katori = ~150g"
+        },
+        {
+            "name": "Tofu",
+            "category": "vegan",
+            "proteinPer100g": 8,
+            "carbsPer100g": 1.9,
+            "fatPer100g": 4.8,
+            "fiberPer100g": 0.3,
+            "caloriesPer100g": 76,
+            "servingNote": "Extra firm tofu"
+        },
+        {
+            "name": "Oats (Raw)",
+            "category": "vegan",
+            "proteinPer100g": 13.5,
+            "carbsPer100g": 67,
+            "fatPer100g": 7,
+            "fiberPer100g": 10,
+            "caloriesPer100g": 389,
+            "servingNote": "1 serving = ~40g dry"
+        },
+        {
+            "name": "Peanut Butter",
+            "category": "vegan",
+            "proteinPer100g": 25,
+            "carbsPer100g": 20,
+            "fatPer100g": 50,
+            "fiberPer100g": 6,
+            "caloriesPer100g": 588,
+            "servingNote": "1 tbsp = ~16g"
+        },
+        {
+            "name": "Almonds",
+            "category": "vegan",
+            "proteinPer100g": 21,
+            "carbsPer100g": 22,
+            "fatPer100g": 49,
+            "fiberPer100g": 12,
+            "caloriesPer100g": 579,
+            "servingNote": "10 almonds = ~12g"
+        },
+        {
+            "name": "Milk (Full Cream)",
+            "category": "vegetarian",
+            "proteinPer100g": 3.3,
+            "carbsPer100g": 4.8,
+            "fatPer100g": 3.5,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 64,
+            "servingNote": "1 glass = ~250ml"
+        },
+        {
+            "name": "Milk (Skimmed)",
+            "category": "vegetarian",
+            "proteinPer100g": 3.4,
+            "carbsPer100g": 5,
+            "fatPer100g": 0.1,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 35,
+            "servingNote": "1 glass = ~250ml"
+        },
+        {
+            "name": "Salmon Fillet",
+            "category": "non-vegetarian",
+            "proteinPer100g": 20,
+            "carbsPer100g": 0,
+            "fatPer100g": 13,
+            "fiberPer100g": 0,
+            "caloriesPer100g": 208,
+            "servingNote": "1 fillet = ~150g"
+        },
+        {
+            "name": "Upma",
+            "category": "vegan",
+            "proteinPer100g": 3,
+            "carbsPer100g": 25,
+            "fatPer100g": 6,
+            "fiberPer100g": 2,
+            "caloriesPer100g": 160,
+            "servingNote": "100g serving"
+        },
+        {
+            "name": "Poha",
+            "category": "vegan",
+            "proteinPer100g": 3,
+            "carbsPer100g": 35,
+            "fatPer100g": 8,
+            "fiberPer100g": 1,
+            "caloriesPer100g": 220,
+            "servingNote": "100g serving with peanuts"
+        },
+        {
+            "name": "Samosa",
+            "category": "vegetarian",
+            "proteinPer100g": 6,
+            "carbsPer100g": 30,
+            "fatPer100g": 20,
+            "fiberPer100g": 2,
+            "caloriesPer100g": 320,
+            "servingNote": "1 medium samosa = ~60g (190 kcal)"
+        }
+    ]
+}
