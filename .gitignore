@@ -31,3 +31,11 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local design exports and one-off scripts
+stitch*.zip
+extracted_designs/
+stitch_extracted/
+replace_styles.js
+update_remaining.js
+summarize_designs.js
