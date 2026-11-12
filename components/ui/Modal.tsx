@@ -65,8 +65,8 @@ export function Modal({
             <div
                 className={`
           relative w-full ${sizes[size]}
-          bg-slate-800/95 backdrop-blur-xl
-          border border-slate-700/50 rounded-2xl
+          bg-surface-container-low/95 backdrop-blur-xl
+          border border-outline-variant/30/50 rounded-2xl
           shadow-2xl shadow-black/50
           transform transition-all duration-300
           ${isOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}
@@ -74,11 +74,11 @@ export function Modal({
             >
                 {/* Header */}
                 {title && (
-                    <div className="flex items-center justify-between p-6 border-b border-slate-700/50">
-                        <h2 className="text-xl font-bold text-white">{title}</h2>
+                    <div className="flex items-center justify-between p-6 border-b border-outline-variant/30/50">
+                        <h2 className="text-xl font-bold text-on-surface">{title}</h2>
                         <button
                             onClick={onClose}
-                            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-colors"
+                            className="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-colors"
                         >
                             <svg
                                 className="w-5 h-5"

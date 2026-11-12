@@ -19,13 +19,13 @@ export function Card({
     const baseStyles = 'rounded-2xl p-6 transition-all duration-300';
 
     const variants = {
-        default: 'bg-slate-800/80 border border-slate-700/50',
-        gradient: 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-700/30',
-        glass: 'bg-slate-800/40 backdrop-blur-xl border border-slate-700/30',
+        default: 'bg-surface-container-low border border-outline-variant/10',
+        gradient: 'bg-surface-container-high border border-outline-variant/15',
+        glass: 'bg-surface-container-highest border border-outline-variant/20 backdrop-blur-xl',
     };
 
     const hoverStyles = hover
-        ? 'hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 hover:-translate-y-1'
+        ? 'hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 hover:-translate-y-1'
         : '';
 
     return (
@@ -51,7 +51,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className = '' }: CardTitleProps) {
     return (
-        <h3 className={`text-xl font-bold text-white ${className}`}>{children}</h3>
+        <h3 className={`text-xl font-black font-headline text-on-surface ${className}`}>{children}</h3>
     );
 }
 
@@ -61,7 +61,7 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ children, className = '' }: CardDescriptionProps) {
-    return <p className={`text-slate-400 text-sm mt-1 ${className}`}>{children}</p>;
+    return <p className={`text-on-surface-variant font-label text-sm uppercase tracking-wider mt-1 font-bold ${className}`}>{children}</p>;
 }
 
 interface CardContentProps {
@@ -80,7 +80,7 @@ interface CardFooterProps {
 
 export function CardFooter({ children, className = '' }: CardFooterProps) {
     return (
-        <div className={`mt-4 pt-4 border-t border-slate-700/50 ${className}`}>
+        <div className={`mt-4 pt-4 border-t border-outline-variant/10 ${className}`}>
             {children}
         </div>
     );

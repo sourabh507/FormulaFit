@@ -2,195 +2,214 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui';
-
-const features = [
-    {
-        icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z',
-        title: 'Calorie Calculator',
-        description: 'Calculate your daily calorie needs using the scientifically-backed Mifflin-St Jeor formula.',
-        color: 'from-emerald-500 to-teal-500',
-    },
-    {
-        icon: 'M4 6h16M4 10h16M4 14h16M4 18h16',
-        title: 'Workout Plans',
-        description: 'Get personalized workout routines based on your experience level and available equipment.',
-        color: 'from-cyan-500 to-blue-500',
-    },
-    {
-        icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 7h6m-6 4h6m-6-8h6',
-        title: 'Workout Tracker',
-        description: 'Log your exercises, track sets and reps, and monitor your workout history over time.',
-        color: 'from-pink-500 to-rose-500',
-    },
-    {
-        icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
-        title: 'Protein Guide',
-        description: 'Discover protein-rich foods categorized by vegetarian, non-vegetarian, and vegan options.',
-        color: 'from-violet-500 to-purple-500',
-    },
-    {
-        icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
-        title: 'Calorie Tracker',
-        description: 'Log your meals and track your daily calorie and macro intake with ease.',
-        color: 'from-orange-500 to-red-500',
-    },
-];
-
-const stats = [
-    { value: '100%', label: 'Privacy' },
-    { value: '0', label: 'Signup Needed' },
-    { value: '∞', label: 'Free Forever' },
-];
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="hero-bg relative overflow-hidden">
-                {/* Animated background elements */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-pulse-slow" />
-                    <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow delay-1000" />
-                </div>
-
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-                    <div className="text-center max-w-4xl mx-auto">
-                        {/* Badge */}
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6 animate-fade-in">
-                            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse" />
-                            No signup required • 100% Free
-                        </div>
-
-                        {/* Title */}
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
-                            Your Personal{' '}
-                            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                                Fitness Companion
-                            </span>
-                        </h1>
-
-                        {/* Subtitle */}
-                        <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                            Calculate your calories, plan your workouts, and track your nutrition journey —
-                            all stored locally in your browser. Your data, your privacy.
-                        </p>
-
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                            <Link href="/calculator">
-                                <Button size="lg" className="w-full sm:w-auto">
-                                    Get Started
-                                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
-                                </Button>
-                            </Link>
-                            <Link href="/food-guide">
-                                <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                                    Explore Food Guide
-                                </Button>
-                            </Link>
-                        </div>
-
-                        {/* Stats */}
-                        <div className="mt-12 flex items-center justify-center gap-8 md:gap-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                            {stats.map((stat, index) => (
-                                <div key={index} className="text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-gradient">{stat.value}</div>
-                                    <div className="text-sm text-slate-500">{stat.label}</div>
-                                </div>
-                            ))}
+        <main className="pt-8 md:pt-16 pb-32 px-6 max-w-7xl mx-auto">
+            {/* Hero Section: Kinetic Pulse */}
+            <section className="mb-12">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                    <div>
+                        <span className="text-primary font-label text-sm uppercase tracking-widest font-bold mb-2 block animate-pulse">System Status: Optimal</span>
+                        <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-none italic">PERFORMANCE<br /><span className="text-outline-variant opacity-40">DASHBOARD</span></h1>
+                    </div>
+                    <div className="flex flex-col md:items-end">
+                        <span className="text-secondary font-label text-xs uppercase tracking-[0.2em] mb-1">Daily Goal Progress</span>
+                        <div className="flex gap-1 justify-start md:justify-end">
+                            <div className="h-1 w-8 bg-primary rounded-full"></div>
+                            <div className="h-1 w-8 bg-primary rounded-full"></div>
+                            <div className="h-1 w-8 bg-primary rounded-full"></div>
+                            <div className="h-1 w-8 bg-outline-variant/30 rounded-full"></div>
                         </div>
                     </div>
                 </div>
 
-                {/* Wave divider */}
-                <div className="absolute bottom-0 left-0 right-0">
-                    <svg className="w-full h-12 md:h-24" viewBox="0 0 1440 74" fill="none" preserveAspectRatio="none">
-                        <path d="M0 24C240 74 480 74 720 49C960 24 1200 24 1440 49V74H0V24Z" fill="#020617" />
-                    </svg>
-                </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="bg-slate-950 py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Everything You Need
-                        </h2>
-                        <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            Powerful tools to help you achieve your fitness goals, all in one place.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        {features.map((feature, index) => (
-                            <div
-                                key={index}
-                                className="group relative p-6 md:p-8 rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5"
-                            >
-                                {/* Icon */}
-                                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
-                                    </svg>
-                                </div>
-
-                                {/* Content */}
-                                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                                <p className="text-slate-400">{feature.description}</p>
-
-                                {/* Hover glow */}
-                                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                {/* Bento Grid of Stats */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    {/* Large Stats Card */}
+                    <div className="md:col-span-2 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between min-h-[320px] relative overflow-hidden group border border-outline-variant/10">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+                        <div>
+                            <span className="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-4 block">Current Heart Rate</span>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-8xl font-black font-headline tracking-tighter text-glow">142</span>
+                                <span className="text-primary text-2xl font-bold italic">BPM</span>
                             </div>
-                        ))}
+                        </div>
+                        <div className="mt-auto z-10 relative">
+                            <div className="h-16 w-full flex items-end gap-1 overflow-hidden">
+                                {/* Visualizing a pulse chart */}
+                                <div className="flex-1 bg-primary/20 h-4 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/30 h-8 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/40 h-6 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/60 h-12 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary h-14 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/80 h-10 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/50 h-7 rounded-t-sm"></div>
+                                <div className="flex-1 bg-primary/30 h-4 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Secondary Metric */}
+                    <div className="bg-surface-container-high rounded-xl p-6 flex flex-col justify-between border border-outline-variant/15 hover:border-secondary/50 transition-colors cursor-default">
+                        <span className="material-symbols-outlined text-secondary text-3xl mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
+                        <div>
+                            <span className="text-4xl font-black font-headline">1,840</span>
+                            <span className="text-on-surface-variant text-xs uppercase block font-bold tracking-widest">Kcal Burned</span>
+                        </div>
+                    </div>
+
+                    {/* Tertiary Metric */}
+                    <div className="bg-surface-container-high rounded-xl p-6 flex flex-col justify-between border border-outline-variant/15 hover:border-tertiary/50 transition-colors cursor-default">
+                        <span className="material-symbols-outlined text-tertiary text-3xl mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
+                        <div>
+                            <span className="text-4xl font-black font-headline">94<span className="text-lg">%</span></span>
+                            <span className="text-on-surface-variant text-xs uppercase block font-bold tracking-widest">Recovery Score</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* How It Works */}
-            <section className="bg-slate-950 py-20 border-t border-slate-800/50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            How It Works
-                        </h2>
-                        <p className="text-lg text-slate-400">
-                            Get started in 3 simple steps
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            { step: '01', title: 'Enter Your Details', desc: 'Input your age, weight, height, and fitness goals' },
-                            { step: '02', title: 'Get Your Plan', desc: 'Receive personalized calorie targets and workout recommendations' },
-                            { step: '03', title: 'Track Progress', desc: 'Log your meals and monitor your daily nutrition' },
-                        ].map((item, index) => (
-                            <div key={index} className="text-center">
-                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 mb-6">
-                                    <span className="text-2xl font-bold text-gradient">{item.step}</span>
+            {/* Main Content Area */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                {/* Workouts & Planning (Left 2 Columns) */}
+                <div className="lg:col-span-2 space-y-12">
+                    <section>
+                        <div className="flex justify-between items-center mb-6">
+                            <h2 className="text-2xl font-black font-headline tracking-tight uppercase italic">Upcoming Sessions</h2>
+                            <Link href="/workout" className="text-primary text-xs font-bold uppercase tracking-[0.1em] flex items-center gap-2 hover:translate-x-1 transition-transform">
+                                View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            </Link>
+                        </div>
+                        <div className="space-y-4">
+                            {/* Workout Item 1 */}
+                            <div className="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center justify-between border border-outline-variant/10">
+                                <div className="flex items-center gap-6">
+                                    <div className="w-16 h-16 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary border border-outline-variant/20 shadow-lg shadow-black/20">
+                                        <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>fitness_center</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-on-surface">Hypertrophy Phase: Legs</h3>
+                                        <p className="text-on-surface-variant text-sm flex items-center gap-2 mt-1 font-label">
+                                            <span className="material-symbols-outlined text-xs">schedule</span> 60 mins • High Intensity
+                                        </p>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                                <p className="text-slate-400">{item.desc}</p>
+                                <button className="bg-surface-container-highest text-primary font-bold px-4 py-2 rounded-lg text-sm hover:bg-primary hover:text-on-primary transition-all tracking-wider hidden sm:block">
+                                    START
+                                </button>
                             </div>
-                        ))}
-                    </div>
 
-                    {/* Final CTA */}
-                    <div className="mt-16 text-center">
-                        <Link href="/calculator">
-                            <Button size="lg">
-                                Start Your Journey
-                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </Button>
+                            {/* Workout Item 2 */}
+                            <div className="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center justify-between opacity-60 border border-outline-variant/10">
+                                <div className="flex items-center gap-6">
+                                    <div className="w-16 h-16 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary border border-outline-variant/20">
+                                        <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>directions_run</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-on-surface">Threshold Intervals</h3>
+                                        <p className="text-on-surface-variant text-sm flex items-center gap-2 mt-1 font-label">
+                                            <span className="material-symbols-outlined text-xs">event</span> Tomorrow • 06:30 AM
+                                        </p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-on-surface-variant/30 hidden sm:block">lock</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Quick Links: Generators */}
+                    <section className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <Link href="/calculator" className="relative h-48 rounded-xl overflow-hidden group cursor-pointer border border-outline-variant/20 block shadow-xl shadow-black/40">
+                            <img alt="Healthy food" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-40 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrTuEcQrZQFBBbrj7CIDD9JlZnExf3q8P15EJeSSX0_fa0m1q4ru5RwZ7gg7H3NvbV-WwR5BDx6xOHO3h_yif7UuZJ0Vcf-hCM3fsMMiC-gpoUqQpa4UF8mjn7Vd475aCRP2KaKbNy685vU2XoNcFjHCfXPfDWifviAmk02fdj881kt_J1iabw2K4ZjGwZkW0Mch1zAyciC3eN8JchsR3EiH2sQMS-dBmB6GTIk2sXANqhSKqQUKbjSPLMLE_92P3d9s3eV0YJKn6-" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-6 flex flex-col justify-end">
+                                <h4 className="text-xl font-black font-headline uppercase leading-none mb-1 text-on-background">Calorie<br />Calculator</h4>
+                                <p className="text-xs text-on-surface-variant font-bold tracking-[0.2em] uppercase">Optimize Fueling</p>
+                            </div>
                         </Link>
-                    </div>
+
+                        <Link href="/workout" className="relative h-48 rounded-xl overflow-hidden group cursor-pointer border border-outline-variant/20 block shadow-xl shadow-black/40">
+                            <img alt="Gym equipment" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-40 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZhbKMuzpN01I4X2Y9iVaiQ0NDdoie5o0DKB75-vE5cEX4QhepP8BcH4cpwAk5Vw0iGtJYisMHzpeTsLmKUy8kvnkCvRb_uKo8kcbPOPjSINAx1GxrC77sQWQ15lv71_T0M4fxHfmK9U5mipZlYO6BEdMBr5O5wyFNetqilBdKOLHM_LxDDvCUcPK0DIBnbfJqJhgdkXqnXxHRC36Gth3u6AymOlkCuGjLXz1EXZbvHDnJsEcK8R3iVlbI7JoSy3r4TTMBKMKinHF4" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-6 flex flex-col justify-end">
+                                <h4 className="text-xl font-black font-headline uppercase leading-none mb-1 text-on-background">Workout<br />Generator</h4>
+                                <p className="text-xs text-on-surface-variant font-bold tracking-[0.2em] uppercase">Ai-Powered Plan</p>
+                            </div>
+                        </Link>
+                    </section>
                 </div>
-            </section>
-        </div>
+
+                {/* Nutrition Sidebar (Right 1 Column) */}
+                <div className="space-y-8">
+                    <section className="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/10 shadow-2xl shadow-black/20">
+                        <h2 className="text-xl font-black font-headline tracking-tight uppercase mb-8 italic text-on-background">Nutrition Macro-Log</h2>
+
+                        <div className="space-y-8">
+                            {/* Macro Ring Component */}
+                            <div className="relative w-40 h-40 mx-auto mb-8">
+                                <svg className="w-full h-full transform -rotate-90">
+                                    <circle className="text-outline-variant opacity-20" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" strokeWidth="12"></circle>
+                                    <circle className="text-primary" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" strokeDasharray="440" strokeDashoffset="110" strokeWidth="12" style={{ transition: 'stroke-dashoffset 1s ease-in-out' }}></circle>
+                                </svg>
+                                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span className="text-3xl font-black font-headline text-on-background">75%</span>
+                                    <span className="text-[10px] uppercase font-bold text-on-surface-variant tracking-[0.15em] mt-1">Total Intake</span>
+                                </div>
+                            </div>
+
+                            <div className="space-y-5">
+                                <div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(90,240,179,0.5)]"></div>
+                                            <span className="text-sm font-bold text-on-background">Protein</span>
+                                        </div>
+                                        <span className="text-sm text-on-surface-variant font-label font-bold">160g / <span className="font-normal opacity-70">210g</span></span>
+                                    </div>
+                                    <div className="w-full bg-outline-variant/10 h-1.5 rounded-full overflow-hidden">
+                                        <div className="bg-primary h-full w-[76%] rounded-full shadow-[0_0_10px_rgba(90,240,179,0.8)]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(93,230,255,0.5)]"></div>
+                                            <span className="text-sm font-bold text-on-background">Carbs</span>
+                                        </div>
+                                        <span className="text-sm text-on-surface-variant font-label font-bold">210g / <span className="font-normal opacity-70">300g</span></span>
+                                    </div>
+                                    <div className="w-full bg-outline-variant/10 h-1.5 rounded-full overflow-hidden">
+                                        <div className="bg-secondary h-full w-[70%] rounded-full shadow-[0_0_10px_rgba(93,230,255,0.8)]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(115,240,140,0.5)]"></div>
+                                            <span className="text-sm font-bold text-on-background">Fats</span>
+                                        </div>
+                                        <span className="text-sm text-on-surface-variant font-label font-bold">45g / <span className="font-normal opacity-70">70g</span></span>
+                                    </div>
+                                    <div className="w-full bg-outline-variant/10 h-1.5 rounded-full overflow-hidden">
+                                        <div className="bg-tertiary h-full w-[64%] rounded-full shadow-[0_0_10px_rgba(115,240,140,0.8)]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <Link href="/tracker" className="block w-full mt-10 bg-kinetic-gradient text-on-primary text-center font-black py-4 rounded-xl text-xs uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 duration-300">
+                            Log Today's Meal
+                        </Link>
+                    </section>
+                </div>
+            </div>
+
+            {/* Floating Action Button */}
+            <button className="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-14 h-14 md:w-16 md:h-16 bg-kinetic-gradient text-on-primary rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 hover:scale-110 active:scale-90 transition-all z-40">
+                <span className="material-symbols-outlined text-3xl font-bold">add</span>
+            </button>
+        </main>
     );
 }

@@ -23,7 +23,7 @@ export function Input({
             {label && (
                 <label
                     htmlFor={inputId}
-                    className="block text-sm font-medium text-slate-300 mb-2"
+                    className="block text-xs font-bold font-label uppercase tracking-widest text-on-surface-variant mb-2"
                 >
                     {label}
                 </label>
@@ -32,22 +32,22 @@ export function Input({
                 id={inputId}
                 className={`
           w-full px-4 py-3 rounded-xl
-          bg-slate-800/80 border border-slate-700/50
-          text-white placeholder-slate-500
+          bg-surface-container-lowest border border-outline-variant/20
+          text-on-surface placeholder-on-surface-variant/50 font-medium
           transition-all duration-200
-          focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50
-          hover:border-slate-600
+          focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+          hover:border-outline-variant
           disabled:opacity-50 disabled:cursor-not-allowed
-          ${error ? 'border-red-500/50 focus:ring-red-500/50 focus:border-red-500/50' : ''}
+          ${error ? 'border-error/50 focus:ring-error/50 focus:border-error/50' : ''}
           ${className}
         `}
                 {...props}
             />
             {error && (
-                <p className="mt-2 text-sm text-red-400">{error}</p>
+                <p className="mt-2 text-xs font-bold text-error uppercase tracking-wider">{error}</p>
             )}
             {helperText && !error && (
-                <p className="mt-2 text-sm text-slate-500">{helperText}</p>
+                <p className="mt-2 text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">{helperText}</p>
             )}
         </div>
     );

@@ -254,15 +254,15 @@ export default function TrackerPage() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 py-8 md:py-12">
+        <div className="min-h-screen bg-background py-8 md:py-12">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-12">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">
                         Daily{' '}
-                        <span className="text-gradient">Calorie Tracker</span>
+                        <span className="bg-kinetic-gradient bg-clip-text text-transparent">Calorie Tracker</span>
                     </h1>
-                    <p className="text-slate-400 max-w-lg mx-auto">
+                    <p className="text-on-surface-variant max-w-lg mx-auto">
                         Indian food database with complete macro tracking including carbs, fats, and fiber.
                     </p>
                 </div>
@@ -274,7 +274,7 @@ export default function TrackerPage() {
                         <CardHeader>
                             <div className="flex items-center justify-between">
                                 <CardTitle>Calorie & Macro Distribution</CardTitle>
-                                <span className="text-sm text-slate-400">{formatDate(today)}</span>
+                                <span className="text-sm text-on-surface-variant">{formatDate(today)}</span>
                             </div>
                         </CardHeader>
                         <CardContent>
@@ -307,10 +307,10 @@ export default function TrackerPage() {
                                 <div className="w-full md:w-1/2 space-y-6">
                                     <div>
                                         <div className="flex items-center justify-between mb-2">
-                                            <span className="text-slate-300 font-medium">Daily Calories</span>
-                                            <span className="text-2xl font-bold text-white">
+                                            <span className="text-on-surface-variant font-medium">Daily Calories</span>
+                                            <span className="text-2xl font-bold text-on-surface">
                                                 {todayLog?.totals.calories.toLocaleString() || 0}
-                                                <span className="text-sm text-slate-500 font-normal"> / {targetCalories.toLocaleString()}</span>
+                                                <span className="text-sm text-outline-variant font-normal"> / {targetCalories.toLocaleString()}</span>
                                             </span>
                                         </div>
                                         <ProgressBar
@@ -319,21 +319,21 @@ export default function TrackerPage() {
                                             showValue={false}
                                             size="lg"
                                         />
-                                        <p className="text-xs text-slate-500 mt-2">
+                                        <p className="text-xs text-outline-variant mt-2">
                                             {targetCalories - (todayLog?.totals.calories || 0) > 0
                                                 ? `${(targetCalories - (todayLog?.totals.calories || 0)).toLocaleString()} kcal left`
                                                 : 'Target reached!'
                                             }
                                         </p>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/50">
-                                        <div className="p-3 rounded-xl bg-slate-800/50">
-                                            <p className="text-xs text-slate-500 mb-1">Fats Progress</p>
-                                            <p className="text-lg font-bold text-amber-500">{Math.round(todayLog?.totals.fat || 0)}g / {targetFat}g</p>
+                                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-outline-variant/30/50">
+                                        <div className="p-3 rounded-xl bg-surface-container-low/50">
+                                            <p className="text-xs text-outline-variant mb-1">Fats Progress</p>
+                                            <p className="text-lg font-bold text-tertiary">{Math.round(todayLog?.totals.fat || 0)}g / {targetFat}g</p>
                                         </div>
-                                        <div className="p-3 rounded-xl bg-slate-800/50">
-                                            <p className="text-xs text-slate-500 mb-1">Fiber Progress</p>
-                                            <p className="text-lg font-bold text-indigo-400">{Math.round(todayLog?.totals.fiber || 0)}g / {targetFiber}g</p>
+                                        <div className="p-3 rounded-xl bg-surface-container-low/50">
+                                            <p className="text-xs text-outline-variant mb-1">Fiber Progress</p>
+                                            <p className="text-lg font-bold text-primary">{Math.round(todayLog?.totals.fiber || 0)}g / {targetFiber}g</p>
                                         </div>
                                     </div>
                                 </div>
@@ -349,29 +349,29 @@ export default function TrackerPage() {
                         <CardContent className="space-y-6">
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-emerald-400 font-medium">Protein</span>
-                                    <span className="text-white">{Math.round(todayLog?.totals.protein || 0)}g / {targetProtein}g</span>
+                                    <span className="text-primary font-medium">Protein</span>
+                                    <span className="text-on-surface">{Math.round(todayLog?.totals.protein || 0)}g / {targetProtein}g</span>
                                 </div>
                                 <ProgressBar value={todayLog?.totals.protein || 0} max={targetProtein} variant="success" size="md" showValue={false} />
                             </div>
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-cyan-400 font-medium">Carbs</span>
-                                    <span className="text-white">{Math.round(todayLog?.totals.carbs || 0)}g / {targetCarbs}g</span>
+                                    <span className="text-secondary font-medium">Carbs</span>
+                                    <span className="text-on-surface">{Math.round(todayLog?.totals.carbs || 0)}g / {targetCarbs}g</span>
                                 </div>
                                 <ProgressBar value={todayLog?.totals.carbs || 0} max={targetCarbs} variant="default" size="md" showValue={false} />
                             </div>
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-amber-500 font-medium">Fats</span>
-                                    <span className="text-white">{Math.round(todayLog?.totals.fat || 0)}g / {targetFat}g</span>
+                                    <span className="text-tertiary font-medium">Fats</span>
+                                    <span className="text-on-surface">{Math.round(todayLog?.totals.fat || 0)}g / {targetFat}g</span>
                                 </div>
                                 <ProgressBar value={todayLog?.totals.fat || 0} max={targetFat} variant="warning" size="md" showValue={false} />
                             </div>
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-indigo-400 font-medium">Fiber</span>
-                                    <span className="text-white">{Math.round(todayLog?.totals.fiber || 0)}g / {targetFiber}g</span>
+                                    <span className="text-primary font-medium">Fiber</span>
+                                    <span className="text-on-surface">{Math.round(todayLog?.totals.fiber || 0)}g / {targetFiber}g</span>
                                 </div>
                                 <ProgressBar value={todayLog?.totals.fiber || 0} max={targetFiber} variant="default" size="md" showValue={false} className="opacity-80" />
                             </div>
@@ -380,13 +380,13 @@ export default function TrackerPage() {
                 </div>
 
                 {/* AI Smart Add Section */}
-                <Card variant="glass" className="mb-8 border-emerald-500/20 shadow-lg shadow-emerald-500/5">
+                <Card variant="glass" className="mb-8 border-primary/20 shadow-lg shadow-emerald-500/5">
                     <CardContent className="py-6">
                         <form onSubmit={handleSmartAdd} className="space-y-4">
                             <div className="flex items-center space-x-2 mb-2">
-                                <Sparkles className="w-5 h-5 text-emerald-400" />
-                                <h3 className="text-white font-bold">AI Smart Add</h3>
-                                <span className="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded font-bold uppercase tracking-widest">New</span>
+                                <Sparkles className="w-5 h-5 text-primary" />
+                                <h3 className="text-on-surface font-bold">AI Smart Add</h3>
+                                <span className="text-[10px] bg-primary text-on-surface px-1.5 py-0.5 rounded font-bold uppercase tracking-widest">New</span>
                             </div>
                             <div className="flex gap-4">
                                 <div className="flex-1 relative">
@@ -395,10 +395,10 @@ export default function TrackerPage() {
                                         value={smartInput}
                                         onChange={(e) => setSmartInput(e.target.value)}
                                         placeholder='e.g., "I had 2 rotis and 100g paneer for lunch"'
-                                        className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all placeholder:text-slate-500"
+                                        className="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all placeholder:text-outline-variant"
                                         disabled={isSmartAdding}
                                     />
-                                    <p className="text-[10px] text-slate-500 mt-2 ml-1 italic">
+                                    <p className="text-[10px] text-outline-variant mt-2 ml-1 italic">
                                         Type what you ate in natural language — our AI will identify and log it automatically.
                                     </p>
                                 </div>
@@ -416,7 +416,7 @@ export default function TrackerPage() {
                                 </Button>
                             </div>
                             {smartAddError && (
-                                <p className="text-red-400 text-xs mt-2 text-center animate-in fade-in duration-300">
+                                <p className="text-error text-xs mt-2 text-center animate-in fade-in duration-300">
                                     {smartAddError}
                                 </p>
                             )}
@@ -448,24 +448,24 @@ export default function TrackerPage() {
                                     {todayLog.meals.map((meal) => (
                                         <div
                                             key={meal.id}
-                                            className="flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 group hover:border-slate-600 transition-colors"
+                                            className="flex items-center justify-between p-4 rounded-xl bg-surface-container-low/50 border border-outline-variant/30/50 group hover:border-outline-variant/50 transition-colors"
                                         >
                                             <div className="flex-1">
                                                 <div className="flex items-center gap-3">
-                                                    <h4 className="text-white font-medium">{meal.name}</h4>
-                                                    <span className="text-xs text-slate-500">{formatTime(meal.timestamp)}</span>
+                                                    <h4 className="text-on-surface font-medium">{meal.name}</h4>
+                                                    <span className="text-xs text-outline-variant">{formatTime(meal.timestamp)}</span>
                                                 </div>
                                                 <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-sm">
-                                                    <span className="text-cyan-400 font-medium">{meal.calories} kcal</span>
-                                                    <span className="text-emerald-400">P: {meal.protein}g</span>
-                                                    <span className="text-cyan-300">C: {meal.carbs}g</span>
-                                                    <span className="text-amber-500">F: {meal.fat}g</span>
-                                                    {meal.fiber > 0 && <span className="text-indigo-300 text-xs">Fib: {meal.fiber}g</span>}
+                                                    <span className="text-secondary font-medium">{meal.calories} kcal</span>
+                                                    <span className="text-primary">P: {meal.protein}g</span>
+                                                    <span className="text-secondary">C: {meal.carbs}g</span>
+                                                    <span className="text-tertiary">F: {meal.fat}g</span>
+                                                    {meal.fiber > 0 && <span className="text-primary text-xs">Fib: {meal.fiber}g</span>}
                                                 </div>
                                             </div>
                                             <button
                                                 onClick={() => handleRemoveMeal(meal.id)}
-                                                className="p-2 rounded-lg text-slate-500 hover:text-red-400 hover:bg-red-500/10 transition-colors opacity-0 group-hover:opacity-100"
+                                                className="p-2 rounded-lg text-outline-variant hover:text-error hover:bg-error/10 transition-colors opacity-0 group-hover:opacity-100"
                                             >
                                                 <Trash2 className="w-5 h-5" />
                                             </button>
@@ -474,10 +474,10 @@ export default function TrackerPage() {
                                 </div>
                             ) : (
                                 <div className="text-center py-8">
-                                    <div className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mx-auto mb-4">
-                                        <Search className="w-8 h-8 text-slate-500" />
+                                    <div className="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mx-auto mb-4">
+                                        <Search className="w-8 h-8 text-outline-variant" />
                                     </div>
-                                    <p className="text-slate-400 mb-4">No meals logged today</p>
+                                    <p className="text-on-surface-variant mb-4">No meals logged today</p>
                                     <Button size="sm" onClick={() => setIsAddingMeal(true)}>
                                         Add Your First Food
                                     </Button>
@@ -496,27 +496,27 @@ export default function TrackerPage() {
                                     recentLogs.map((log) => (
                                         <div
                                             key={log.date}
-                                            className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/30"
+                                            className="p-3 rounded-xl bg-surface-container-low/50 border border-outline-variant/30/30"
                                         >
                                             <div className="flex justify-between items-center mb-2">
-                                                <p className="text-white font-medium text-sm">{formatDate(log.date)}</p>
-                                                <p className="text-xs text-cyan-400 font-bold">{log.totals.calories} kcal</p>
+                                                <p className="text-on-surface font-medium text-sm">{formatDate(log.date)}</p>
+                                                <p className="text-xs text-secondary font-bold">{log.totals.calories} kcal</p>
                                             </div>
                                             <div className="grid grid-cols-3 gap-1">
-                                                <div className="h-1 bg-emerald-500/30 rounded-full overflow-hidden">
-                                                    <div className="h-full bg-emerald-500" style={{ width: `${Math.min(100, (log.totals.protein / targetProtein) * 100)}%` }} />
+                                                <div className="h-1 bg-primary/30 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-primary" style={{ width: `${Math.min(100, (log.totals.protein / targetProtein) * 100)}%` }} />
                                                 </div>
-                                                <div className="h-1 bg-cyan-500/30 rounded-full overflow-hidden">
-                                                    <div className="h-full bg-cyan-500" style={{ width: `${Math.min(100, (log.totals.carbs / targetCarbs) * 100)}%` }} />
+                                                <div className="h-1 bg-secondary/30 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-secondary" style={{ width: `${Math.min(100, (log.totals.carbs / targetCarbs) * 100)}%` }} />
                                                 </div>
-                                                <div className="h-1 bg-amber-500/30 rounded-full overflow-hidden">
-                                                    <div className="h-full bg-amber-500" style={{ width: `${Math.min(100, (log.totals.fat / targetFat) * 100)}%` }} />
+                                                <div className="h-1 bg-tertiary/30 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-tertiary" style={{ width: `${Math.min(100, (log.totals.fat / targetFat) * 100)}%` }} />
                                                 </div>
                                             </div>
                                         </div>
                                     ))
                                 ) : (
-                                    <p className="text-center text-slate-500 text-sm py-4">No history yet</p>
+                                    <p className="text-center text-outline-variant text-sm py-4">No history yet</p>
                                 )}
                             </div>
                         </CardContent>
@@ -532,7 +532,7 @@ export default function TrackerPage() {
                 >
                     <div className="space-y-4">
                         <div className="relative">
-                            <label className="block text-sm font-medium text-slate-300 mb-2">
+                            <label className="block text-sm font-medium text-on-surface-variant mb-2">
                                 Select Food Item
                             </label>
                             <input
@@ -547,46 +547,46 @@ export default function TrackerPage() {
                                     }
                                 }}
                                 onFocus={() => setShowFoodDropdown(true)}
-                                className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/50 text-white placeholder-slate-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50"
+                                className="w-full px-4 py-3 rounded-xl bg-surface-container-low/80 border border-outline-variant/30/50 text-on-surface placeholder-slate-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-primary/50"
                             />
 
                             {showFoodDropdown && (
-                                <div className="absolute z-10 w-full mt-2 max-h-60 overflow-y-auto rounded-xl bg-slate-800 border border-slate-700 shadow-xl scrollbar-thin">
+                                <div className="absolute z-10 w-full mt-2 max-h-60 overflow-y-auto rounded-xl bg-surface-container-low border border-outline-variant/30 shadow-xl scrollbar-thin">
                                     {filteredFoods.length > 0 ? (
                                         filteredFoods.map((food, index) => (
                                             <button
                                                 key={index}
                                                 onClick={() => handleSelectFood(food)}
-                                                className={`w-full px-4 py-3 text-left hover:bg-slate-700/50 transition-colors flex items-center justify-between border-b border-slate-700/30 last:border-0 ${selectedFood?.name === food.name ? 'bg-emerald-500/10' : ''
+                                                className={`w-full px-4 py-3 text-left hover:bg-surface-container-high/50 transition-colors flex items-center justify-between border-b border-outline-variant/30/30 last:border-0 ${selectedFood?.name === food.name ? 'bg-primary/10' : ''
                                                     }`}
                                             >
                                                 <div className="flex-1 pr-4">
-                                                    <p className="text-white font-medium">{food.name}</p>
-                                                    <p className="text-xs text-slate-500">{food.category}</p>
+                                                    <p className="text-on-surface font-medium">{food.name}</p>
+                                                    <p className="text-xs text-outline-variant">{food.category}</p>
                                                 </div>
                                                 <div className="text-right whitespace-nowrap">
-                                                    <p className="text-emerald-400 text-sm font-medium">P: {food.proteinPer100g}g</p>
-                                                    <p className="text-slate-400 text-xs">{food.caloriesPer100g} kcal</p>
+                                                    <p className="text-primary text-sm font-medium">P: {food.proteinPer100g}g</p>
+                                                    <p className="text-on-surface-variant text-xs">{food.caloriesPer100g} kcal</p>
                                                 </div>
                                             </button>
                                         ))
                                     ) : (
-                                        <p className="px-4 py-3 text-slate-500 text-center">No Indian foods found</p>
+                                        <p className="px-4 py-3 text-outline-variant text-center">No Indian foods found</p>
                                     )}
                                 </div>
                             )}
                         </div>
 
                         {selectedFood && (
-                            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 grid grid-cols-2 gap-2">
+                            <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 grid grid-cols-2 gap-2">
                                 <div className="col-span-2">
-                                    <p className="text-sm text-emerald-400 font-bold">{selectedFood.name}</p>
+                                    <p className="text-sm text-primary font-bold">{selectedFood.name}</p>
                                 </div>
-                                <p className="text-xs text-slate-400">Protein: {selectedFood.proteinPer100g}g</p>
-                                <p className="text-xs text-slate-400">Carbs: {selectedFood.carbsPer100g}g</p>
-                                <p className="text-xs text-slate-400">Fat: {selectedFood.fatPer100g}g</p>
-                                <p className="text-xs text-slate-400">Fiber: {selectedFood.fiberPer100g}g</p>
-                                <p className="text-xs text-slate-500 col-span-2 mt-1 italic">
+                                <p className="text-xs text-on-surface-variant">Protein: {selectedFood.proteinPer100g}g</p>
+                                <p className="text-xs text-on-surface-variant">Carbs: {selectedFood.carbsPer100g}g</p>
+                                <p className="text-xs text-on-surface-variant">Fat: {selectedFood.fatPer100g}g</p>
+                                <p className="text-xs text-on-surface-variant">Fiber: {selectedFood.fiberPer100g}g</p>
+                                <p className="text-xs text-outline-variant col-span-2 mt-1 italic">
                                     💡 {selectedFood.servingNote}
                                 </p>
                             </div>
@@ -601,33 +601,33 @@ export default function TrackerPage() {
                                 onChange={(e) => setWeight(e.target.value)}
                             />
                             <div className="flex flex-col justify-end">
-                                <p className="text-xs text-slate-500 mb-2">Popular sizes:</p>
+                                <p className="text-xs text-outline-variant mb-2">Popular sizes:</p>
                                 <div className="flex gap-2">
-                                    <button onClick={() => setWeight('50')} className="px-2 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 hover:bg-slate-700">50g</button>
-                                    <button onClick={() => setWeight('100')} className="px-2 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 hover:bg-slate-700">100g</button>
-                                    <button onClick={() => setWeight('150')} className="px-2 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 hover:bg-slate-700">150g</button>
+                                    <button onClick={() => setWeight('50')} className="px-2 py-1 text-xs rounded-lg bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high">50g</button>
+                                    <button onClick={() => setWeight('100')} className="px-2 py-1 text-xs rounded-lg bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high">100g</button>
+                                    <button onClick={() => setWeight('150')} className="px-2 py-1 text-xs rounded-lg bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high">150g</button>
                                 </div>
                             </div>
                         </div>
 
                         {selectedFood && weight && (
-                            <div className="p-4 rounded-xl bg-slate-900 border border-slate-700/50">
+                            <div className="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/30/50">
                                 <div className="grid grid-cols-4 gap-2 text-center">
                                     <div className="p-2">
-                                        <p className="text-lg font-bold text-white">{calculatedNutrition.calories}</p>
-                                        <p className="text-[10px] uppercase tracking-wider text-slate-500">Kcal</p>
+                                        <p className="text-lg font-bold text-on-surface">{calculatedNutrition.calories}</p>
+                                        <p className="text-[10px] uppercase tracking-wider text-outline-variant">Kcal</p>
                                     </div>
-                                    <div className="p-2 border-l border-slate-800">
-                                        <p className="text-lg font-bold text-emerald-400">{calculatedNutrition.protein}g</p>
-                                        <p className="text-[10px] uppercase tracking-wider text-slate-500">P</p>
+                                    <div className="p-2 border-l border-outline-variant/10">
+                                        <p className="text-lg font-bold text-primary">{calculatedNutrition.protein}g</p>
+                                        <p className="text-[10px] uppercase tracking-wider text-outline-variant">P</p>
                                     </div>
-                                    <div className="p-2 border-l border-slate-800">
-                                        <p className="text-lg font-bold text-cyan-400">{calculatedNutrition.carbs}g</p>
-                                        <p className="text-[10px] uppercase tracking-wider text-slate-500">C</p>
+                                    <div className="p-2 border-l border-outline-variant/10">
+                                        <p className="text-lg font-bold text-secondary">{calculatedNutrition.carbs}g</p>
+                                        <p className="text-[10px] uppercase tracking-wider text-outline-variant">C</p>
                                     </div>
-                                    <div className="p-2 border-l border-slate-800">
-                                        <p className="text-lg font-bold text-amber-500">{calculatedNutrition.fat}g</p>
-                                        <p className="text-[10px] uppercase tracking-wider text-slate-500">F</p>
+                                    <div className="p-2 border-l border-outline-variant/10">
+                                        <p className="text-lg font-bold text-tertiary">{calculatedNutrition.fat}g</p>
+                                        <p className="text-[10px] uppercase tracking-wider text-outline-variant">F</p>
                                     </div>
                                 </div>
                             </div>
@@ -655,14 +655,14 @@ export default function TrackerPage() {
                     size="sm"
                 >
                     <div className="space-y-4">
-                        <p className="text-slate-400">
+                        <p className="text-on-surface-variant">
                             This will clear all meals logged today. This action cannot be undone.
                         </p>
                         <div className="flex gap-3">
                             <Button variant="ghost" onClick={() => setShowResetConfirm(false)} className="flex-1">
                                 Cancel
                             </Button>
-                            <Button variant="primary" onClick={handleReset} className="flex-1 !bg-red-500 hover:!bg-red-600">
+                            <Button variant="primary" onClick={handleReset} className="flex-1 !bg-error hover:!bg-red-600">
                                 Reset
                             </Button>
                         </div>

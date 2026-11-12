@@ -179,20 +179,20 @@ export default function WorkoutTrackerPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="min-h-screen bg-background">
             <div className="container mx-auto px-4 py-8 max-w-6xl">
                 {/* Header */}
                 <div className="mb-8">
                     <Link
                         href="/"
-                        className="inline-flex items-center text-purple-300 hover:text-purple-100 mb-4 transition-colors"
+                        className="inline-flex items-center text-primary hover:text-on-surface-variant mb-4 transition-colors"
                     >
                         ← Back to Home
                     </Link>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                    <h1 className="text-4xl md:text-5xl font-bold text-on-surface mb-2">
                         💪 Workout Tracker
                     </h1>
-                    <p className="text-purple-200">Log your workouts and track your progress</p>
+                    <p className="text-on-surface-variant">Log your workouts and track your progress</p>
                 </div>
 
                 {/* View Toggle */}
@@ -200,8 +200,8 @@ export default function WorkoutTrackerPage() {
                     <button
                         onClick={() => setView('log')}
                         className={`px-6 py-3 rounded-xl font-semibold transition-all ${view === 'log'
-                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                : 'bg-white/10 text-purple-200 hover:bg-white/20'
+                                ? 'bg-kinetic-gradient text-on-surface shadow-lg'
+                                : 'bg-white/10 text-on-surface-variant hover:bg-white/20'
                             }`}
                     >
                         Log Workout
@@ -209,8 +209,8 @@ export default function WorkoutTrackerPage() {
                     <button
                         onClick={() => setView('history')}
                         className={`px-6 py-3 rounded-xl font-semibold transition-all ${view === 'history'
-                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                : 'bg-white/10 text-purple-200 hover:bg-white/20'
+                                ? 'bg-kinetic-gradient text-on-surface shadow-lg'
+                                : 'bg-white/10 text-on-surface-variant hover:bg-white/20'
                             }`}
                     >
                         History
@@ -222,7 +222,7 @@ export default function WorkoutTrackerPage() {
                     <div className="space-y-6">
                         {/* Exercise Selector */}
                         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                            <h2 className="text-2xl font-bold text-white mb-4">Add Exercise</h2>
+                            <h2 className="text-2xl font-bold text-on-surface mb-4">Add Exercise</h2>
 
                             {/* Search and Filter */}
                             <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -231,15 +231,15 @@ export default function WorkoutTrackerPage() {
                                     placeholder="Search exercises..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    className="px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-on-surface placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 />
                                 <select
                                     value={selectedMuscleGroup}
                                     onChange={(e) => setSelectedMuscleGroup(e.target.value)}
-                                    className="px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    className="px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-on-surface focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 >
                                     {muscleGroups.map(group => (
-                                        <option key={group} value={group} className="bg-slate-800">
+                                        <option key={group} value={group} className="bg-surface-container-low">
                                             {group === 'all' ? 'All Muscle Groups' : group}
                                         </option>
                                     ))}
@@ -251,11 +251,11 @@ export default function WorkoutTrackerPage() {
                                 <select
                                     value={selectedExercise}
                                     onChange={(e) => setSelectedExercise(e.target.value)}
-                                    className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-on-surface focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 >
-                                    <option value="" className="bg-slate-800">Select an exercise</option>
+                                    <option value="" className="bg-surface-container-low">Select an exercise</option>
                                     {filteredExercises.map(ex => (
-                                        <option key={ex.name} value={ex.name} className="bg-slate-800">
+                                        <option key={ex.name} value={ex.name} className="bg-surface-container-low">
                                             {ex.name} ({ex.muscleGroup})
                                         </option>
                                     ))}
@@ -263,7 +263,7 @@ export default function WorkoutTrackerPage() {
                                 <button
                                     onClick={addExercise}
                                     disabled={!selectedExercise}
-                                    className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-6 py-3 bg-kinetic-gradient text-on-surface rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     Add
                                 </button>
@@ -280,14 +280,14 @@ export default function WorkoutTrackerPage() {
                                     >
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
-                                                <h3 className="text-xl font-bold text-white">
+                                                <h3 className="text-xl font-bold text-on-surface">
                                                     {exercise.exerciseName}
                                                 </h3>
-                                                <p className="text-purple-300">{exercise.muscleGroup}</p>
+                                                <p className="text-primary">{exercise.muscleGroup}</p>
                                             </div>
                                             <button
                                                 onClick={() => removeExercise(exercise.id)}
-                                                className="text-red-400 hover:text-red-300 font-semibold"
+                                                className="text-error hover:text-red-300 font-semibold"
                                             >
                                                 Remove
                                             </button>
@@ -297,7 +297,7 @@ export default function WorkoutTrackerPage() {
                                         <div className="overflow-x-auto">
                                             <table className="w-full">
                                                 <thead>
-                                                    <tr className="text-purple-300 text-sm">
+                                                    <tr className="text-primary text-sm">
                                                         <th className="text-left pb-2">Set</th>
                                                         <th className="text-left pb-2">Reps</th>
                                                         <th className="text-left pb-2">Weight (kg)</th>
@@ -307,7 +307,7 @@ export default function WorkoutTrackerPage() {
                                                 <tbody>
                                                     {exercise.sets.map((set) => (
                                                         <tr key={set.setNumber} className="border-t border-white/10">
-                                                            <td className="py-2 text-white">{set.setNumber}</td>
+                                                            <td className="py-2 text-on-surface">{set.setNumber}</td>
                                                             <td className="py-2">
                                                                 <input
                                                                     type="number"
@@ -320,7 +320,7 @@ export default function WorkoutTrackerPage() {
                                                                             parseInt(e.target.value) || 0
                                                                         )
                                                                     }
-                                                                    className="w-20 px-2 py-1 rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                                                    className="w-20 px-2 py-1 rounded bg-white/5 border border-white/20 text-on-surface focus:outline-none focus:ring-2 focus:ring-purple-500"
                                                                 />
                                                             </td>
                                                             <td className="py-2">
@@ -336,7 +336,7 @@ export default function WorkoutTrackerPage() {
                                                                             parseFloat(e.target.value) || 0
                                                                         )
                                                                     }
-                                                                    className="w-20 px-2 py-1 rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                                                    className="w-20 px-2 py-1 rounded bg-white/5 border border-white/20 text-on-surface focus:outline-none focus:ring-2 focus:ring-purple-500"
                                                                 />
                                                             </td>
                                                             <td className="py-2">
@@ -346,7 +346,7 @@ export default function WorkoutTrackerPage() {
                                                                     onChange={() =>
                                                                         toggleSetCompleted(exercise.id, set.setNumber)
                                                                     }
-                                                                    className="w-5 h-5 rounded accent-purple-500"
+                                                                    className="w-5 h-5 rounded accent-primary"
                                                                 />
                                                             </td>
                                                         </tr>
@@ -357,7 +357,7 @@ export default function WorkoutTrackerPage() {
 
                                         <button
                                             onClick={() => addSet(exercise.id)}
-                                            className="mt-4 text-purple-300 hover:text-purple-100 font-semibold"
+                                            className="mt-4 text-primary hover:text-on-surface-variant font-semibold"
                                         >
                                             + Add Set
                                         </button>
@@ -367,14 +367,14 @@ export default function WorkoutTrackerPage() {
                                 {/* Save Button */}
                                 <button
                                     onClick={saveSession}
-                                    className="w-full py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-bold text-lg hover:shadow-lg transition-all"
+                                    className="w-full py-4 bg-kinetic-gradient text-on-primary text-on-surface rounded-xl font-bold text-lg hover:shadow-lg transition-all"
                                 >
                                     💾 Save Workout
                                 </button>
                             </div>
                         ) : (
                             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12 border border-white/20 text-center">
-                                <p className="text-purple-200 text-lg">
+                                <p className="text-on-surface-variant text-lg">
                                     No exercises added yet. Select an exercise above to get started!
                                 </p>
                             </div>
@@ -393,7 +393,7 @@ export default function WorkoutTrackerPage() {
                                 >
                                     <div className="flex justify-between items-start mb-4">
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">
+                                            <h3 className="text-xl font-bold text-on-surface">
                                                 {new Date(session.timestamp).toLocaleDateString('en-US', {
                                                     weekday: 'long',
                                                     year: 'numeric',
@@ -401,14 +401,14 @@ export default function WorkoutTrackerPage() {
                                                     day: 'numeric',
                                                 })}
                                             </h3>
-                                            <p className="text-purple-300">
+                                            <p className="text-primary">
                                                 {session.exercises.length} exercises • Total Volume:{' '}
                                                 {getTotalVolume(session).toFixed(0)} kg
                                             </p>
                                         </div>
                                         <button
                                             onClick={() => deleteSession(session.id)}
-                                            className="text-red-400 hover:text-red-300 font-semibold"
+                                            className="text-error hover:text-red-300 font-semibold"
                                         >
                                             Delete
                                         </button>
@@ -420,7 +420,7 @@ export default function WorkoutTrackerPage() {
                                                 key={exercise.id}
                                                 className="bg-white/5 rounded-xl p-4 border border-white/10"
                                             >
-                                                <h4 className="font-semibold text-white mb-2">
+                                                <h4 className="font-semibold text-on-surface mb-2">
                                                     {exercise.exerciseName}
                                                 </h4>
                                                 <div className="flex flex-wrap gap-2">
@@ -429,7 +429,7 @@ export default function WorkoutTrackerPage() {
                                                         .map((set) => (
                                                             <span
                                                                 key={set.setNumber}
-                                                                className="px-3 py-1 bg-purple-500/30 text-purple-100 rounded-lg text-sm"
+                                                                className="px-3 py-1 bg-primary/30 text-on-surface-variant rounded-lg text-sm"
                                                             >
                                                                 {set.reps} × {set.weight}kg
                                                             </span>
@@ -442,7 +442,7 @@ export default function WorkoutTrackerPage() {
                             ))
                         ) : (
                             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12 border border-white/20 text-center">
-                                <p className="text-purple-200 text-lg">
+                                <p className="text-on-surface-variant text-lg">
                                     No workout history yet. Complete your first workout to see it here!
                                 </p>
                             </div>

@@ -19,42 +19,41 @@ export function Button({
     ...props
 }: ButtonProps) {
     const baseStyles = `
-    inline-flex items-center justify-center font-medium rounded-xl
+    inline-flex items-center justify-center font-bold rounded-xl font-label uppercase tracking-widest
     transition-all duration-300 ease-out
-    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background
     disabled:opacity-50 disabled:cursor-not-allowed
     transform hover:scale-[1.02] active:scale-[0.98]
   `;
 
     const variants = {
         primary: `
-      bg-gradient-to-r from-emerald-500 to-cyan-500
-      hover:from-emerald-400 hover:to-cyan-400
-      text-white shadow-lg shadow-emerald-500/25
-      focus:ring-emerald-500
+      bg-kinetic-gradient text-on-primary
+      shadow-lg shadow-primary/20 hover:shadow-primary/40
+      focus:ring-primary
     `,
         secondary: `
-      bg-slate-700 hover:bg-slate-600
-      text-white
-      focus:ring-slate-500
+      bg-surface-container-highest hover:bg-surface-container-high
+      text-primary border border-outline-variant/10
+      focus:ring-primary
     `,
         outline: `
-      border-2 border-emerald-500/50 hover:border-emerald-400
-      text-emerald-400 hover:text-emerald-300
-      hover:bg-emerald-500/10
-      focus:ring-emerald-500
+      border border-outline-variant/30 hover:border-primary/50
+      text-on-surface hover:text-primary
+      hover:bg-primary/5
+      focus:ring-primary
     `,
         ghost: `
-      text-slate-300 hover:text-white
-      hover:bg-slate-700/50
-      focus:ring-slate-500
+      text-on-surface-variant hover:text-primary
+      hover:bg-surface-container-lowest
+      focus:ring-primary
     `,
     };
 
     const sizes = {
-        sm: 'px-4 py-2 text-sm',
-        md: 'px-6 py-3 text-base',
-        lg: 'px-8 py-4 text-lg',
+        sm: 'px-4 py-2 text-xs',
+        md: 'px-6 py-3 text-sm',
+        lg: 'px-8 py-4 text-base tracking-[0.2em]',
     };
 
     return (

@@ -101,15 +101,15 @@ export default function CalculatorPage() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 py-8 md:py-12">
+        <div className="min-h-screen bg-background py-8 md:py-12">
             <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-12">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">
                         Calculate Your{' '}
-                        <span className="text-gradient">Calories & Macros</span>
+                        <span className="bg-kinetic-gradient bg-clip-text text-transparent">Calories & Macros</span>
                     </h1>
-                    <p className="text-slate-400 max-w-lg mx-auto">
+                    <p className="text-on-surface-variant max-w-lg mx-auto">
                         Enter your details below and we&apos;ll calculate your daily calorie needs
                         and macronutrient targets based on your goals.
                     </p>
@@ -121,7 +121,7 @@ export default function CalculatorPage() {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Gender */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-300 mb-3">
+                                <label className="block text-sm font-medium text-on-surface-variant mb-3">
                                     Gender
                                 </label>
                                 <div className="grid grid-cols-2 gap-4">
@@ -133,8 +133,8 @@ export default function CalculatorPage() {
                                             className={`
                         px-4 py-3 rounded-xl font-medium transition-all duration-200
                         ${formData.gender === option.value
-                                                    ? 'bg-emerald-500/20 border-2 border-emerald-500 text-emerald-400'
-                                                    : 'bg-slate-800/50 border-2 border-slate-700/50 text-slate-300 hover:border-slate-600'
+                                                    ? 'bg-primary/20 border-2 border-primary text-primary'
+                                                    : 'bg-surface-container-low/50 border-2 border-outline-variant/30/50 text-on-surface-variant hover:border-outline-variant/50'
                                                 }
                       `}
                                         >
@@ -198,16 +198,16 @@ export default function CalculatorPage() {
                             />
 
                             {/* Goal Info */}
-                            <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                            <div className="p-4 rounded-xl bg-surface-container-low/50 border border-outline-variant/30/50">
                                 <div className="flex items-start space-x-3">
-                                    <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">
+                                    <div className="p-2 rounded-lg bg-primary/20 text-primary">
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-sm text-slate-300 font-medium">About your goal</p>
-                                        <p className="text-xs text-slate-400 mt-1">
+                                        <p className="text-sm text-on-surface-variant font-medium">About your goal</p>
+                                        <p className="text-xs text-on-surface-variant mt-1">
                                             {formData.goal === 'fat_loss' && 'We\'ll create a 400 calorie deficit for sustainable fat loss of ~0.5kg per week.'}
                                             {formData.goal === 'weight_gain' && 'We\'ll add 400 extra calories to support muscle growth with minimal fat gain.'}
                                             {formData.goal === 'maintenance' && 'We\'ll calculate your exact maintenance calories to maintain your current weight.'}
@@ -229,7 +229,7 @@ export default function CalculatorPage() {
                 </Card>
 
                 {/* Formula info */}
-                <p className="mt-6 text-center text-sm text-slate-500">
+                <p className="mt-6 text-center text-sm text-outline-variant">
                     Calculations based on the Mifflin-St Jeor equation, widely regarded as the most accurate formula for BMR estimation.
                 </p>
             </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     keywords: ['fitness', 'calories', 'macros', 'workout', 'nutrition', 'health'],
     authors: [{ name: 'FormulaFit' }],
     viewport: 'width=device-width, initial-scale=1',
-    themeColor: '#0f172a',
+    themeColor: '#131416',
 };
 
 export default function RootLayout({
@@ -23,7 +23,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className="dark">
-            <body className={`${inter.className} min-h-screen flex flex-col bg-slate-950 text-white antialiased`}>
+            <head>
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+            </head>
+            <body className={`${inter.className} min-h-screen flex flex-col bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary`}>
                 <Header />
                 <main className="flex-1">
                     {children}

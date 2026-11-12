@@ -31,10 +31,10 @@ export function ProgressBar({
     };
 
     const variantStyles = {
-        default: 'from-emerald-500 to-cyan-500',
-        success: 'from-green-500 to-emerald-500',
-        warning: 'from-yellow-500 to-orange-500',
-        danger: 'from-red-500 to-rose-500',
+        default: 'from-primary to-secondary',
+        success: 'from-primary to-emerald-500',
+        warning: 'from-tertiary to-error',
+        danger: 'from-error to-error/80',
     };
 
     // Automatically change variant if over limit
@@ -45,10 +45,10 @@ export function ProgressBar({
             {(label || showValue) && (
                 <div className="flex justify-between items-center mb-2">
                     {label && (
-                        <span className="text-sm font-medium text-slate-300">{label}</span>
+                        <span className="text-sm font-medium text-on-surface-variant">{label}</span>
                     )}
                     {showValue && (
-                        <span className={`text-sm font-medium ${isOver ? 'text-red-400' : 'text-slate-400'}`}>
+                        <span className={`text-sm font-medium ${isOver ? 'text-error' : 'text-on-surface-variant'}`}>
                             {value.toLocaleString()} / {max.toLocaleString()}
                             {isOver && (
                                 <span className="ml-1 text-xs">(+{(value - max).toLocaleString()} over)</span>
@@ -57,7 +57,7 @@ export function ProgressBar({
                     )}
                 </div>
             )}
-            <div className={`w-full bg-slate-700/50 rounded-full overflow-hidden ${sizeStyles[size]}`}>
+            <div className={`w-full bg-surface-container-high/50 rounded-full overflow-hidden ${sizeStyles[size]}`}>
                 <div
                     className={`h-full bg-gradient-to-r ${variantStyles[actualVariant]} rounded-full transition-all duration-500 ease-out`}
                     style={{ width: `${Math.min(percentage, 100)}%` }}
@@ -118,16 +118,16 @@ export function CircularProgress({
                 {/* Gradient definition */}
                 <defs>
                     <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#10b981" />
-                        <stop offset="100%" stopColor="#06b6d4" />
+                        <stop offset="0%" stopColor="#5af0b3" />
+                        <stop offset="100%" stopColor="#5de6ff" />
                     </linearGradient>
                 </defs>
             </svg>
             {/* Center content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-2xl font-bold text-white">{Math.round(percentage)}%</span>
+                <span className="text-2xl font-bold text-on-surface">{Math.round(percentage)}%</span>
                 {label && (
-                    <span className="text-xs text-slate-400 mt-1">{label}</span>
+                    <span className="text-xs text-on-surface-variant mt-1">{label}</span>
                 )}
             </div>
         </div>
